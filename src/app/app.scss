@@ -1,0 +1,50 @@
+/* Your styles goes here. */
+.box {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  width: 602px;
+  height: 601px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  .inner-box-first-row{
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 200px;
+    height: 200px;
+    
+  }
+  .inner-box-first-row:has(+ :not(.inner-box-first-row)) {
+    border-right: none;
+  }
+
+  .inner-box-second-row{
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 200px;
+    height: 200px;
+    &:last-of-type{
+        border-right: none;
+    }
+    
+  }
+  .inner-box-second-row:has(+ :not(.inner-box-second-row)) {
+    border-right: none;
+  }
+
+  .inner-box-third-row{
+    border-right: 1px solid black;
+    width: 200px;
+    height: 200px;
+    &:last-of-type{
+        border-right: none;
+    }
+  }
+  .inner-box-third-row:has(+ :not(.inner-box-third-row)) {
+    border-right: none;
+  }
+
+
+}
